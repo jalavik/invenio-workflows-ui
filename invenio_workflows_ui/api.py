@@ -158,6 +158,12 @@ class WorkflowUIRecord(Record):
             action_form = actions[action_name]
             return action_form.resolve(self.model, *args, **kwargs)
 
+    # @index
+    def edit(self, *args, **kwargs):
+        """Edit record."""
+        print(args, kwargs)
+
+
     def restart(self, *args, **kwargs):
         """Resume execution from current task/callback in workflow."""
         return resume.delay(
